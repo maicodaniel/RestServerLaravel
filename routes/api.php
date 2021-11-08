@@ -19,7 +19,7 @@ use App\Models\Clientes;
     return $request->user();
 });
 */
-Route::get('/clientes',[App\Http\Controllers\Api\ClientesController::class,'index']);
+Route::middleware('client')->get('/clientes',[App\Http\Controllers\Api\ClientesController::class,'index']);
 Route::post('/clientes/criar',[App\Http\Controllers\Api\ClientesController::class,'store']);
 Route::middleware('auth.basic')->get('/cliente/{id}',[App\Http\Controllers\Api\ClientesController::class,'show']);
 

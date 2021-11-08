@@ -46,7 +46,7 @@ class ClientesController extends Controller
      */
     public function show($id)
     {
-
+        
         return response()->json(Clientes::findorfail($id));
     }
 
